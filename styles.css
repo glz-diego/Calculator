@@ -1,0 +1,27 @@
+#output{
+	height: 70px;
+	font-size: 45px;
+}
+.container{
+	margin-top: 50px;
+	font-size: 35px;
+}
+.btn{
+	margin: 12px;
+	height: 90px;
+	size: 35px;
+}
+.btn2{
+	width: 90px;
+}
+.btn1{
+	width: 318px;
+}
+h1{
+	padding-top: 15px;
+	text-align: center;
+}
+.row{
+	display: flex;
+	justify-content: center;
+}
