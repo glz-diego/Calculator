@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ToDo List</title>
+	<title>Calculator</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -11,12 +11,66 @@
     <script src="script.js"></script>
 </head>
 <body>
+	<script>
+		function add(){
+			x = document.getElementById("output");
+			add = true;
+			clear();
+		}
+		function mul(){
+			x = document.getElementById("output");
+			mul = true;
+			clear();
+		}
+		function sub(){
+			x = document.getElementById("output");
+			sub = true;
+			clear();
+		}
+		function div(){
+			x = document.getElementById("output");
+			div = true;
+			clear();
+		}
+
+		function clear(){
+			let output = document.querySelector("#output");
+			output.innerHTML = "";
+		}
+
+		function equal(){
+			y = document.getElementById("output");
+			output.innerHTML = "";
+			if(add == true){
+				clear();
+				return parseInt(x) + parseInt(y);
+			}
+			if(sub == true){
+				clear();
+				return parseInt(x) - parseInt(y);
+			}
+			if(mul == true){
+				clear();
+				return parseInt(x) * parseInt(y);
+			}
+			if(div == true){
+				clear();
+				return parseInt(x) / parseInt(y);
+			}
+			var add = false;
+			var sub = false;
+			var div = false;
+			var mul = false;
+			var x = 0;
+			var y = 0;
+		}
+	</script>
 	<h1>Calculator</h1>
 	<div class="container">
 		<div style="background-color: lightgray;" id="output">&nbsp;</div>
 		<div class="row">
 
-				<button class="btn btn-outline-secondary btn2" onclick="one()" id="one" value="1">1</button>
+				<button class="btn btn-outline-secondary btn2" onclick="one()" id="one">1</button>
 				<button class="btn btn-outline-secondary btn2" onclick="two()" id="two">2</button>
 				<button class="btn btn-outline-secondary btn2" onclick="three()" id="three">3</button>
 				<button class="btn btn-outline-secondary btn2" onclick="four()" id="four">4</button>
@@ -27,13 +81,12 @@
 				<button class="btn btn-outline-secondary btn2" onclick="nine()" id="nine">9</button>
 				<button class="btn btn-outline-secondary btn2" onclick="zero()" id="zero">0</button>
 
-				<button class="btn btn-secondary btn2" id="btnadd">+</button>
-				<button class="btn btn-secondary btn2" id="btnsub" id="btnadd">-</button>
-				<button class="btn btn-secondary btn2" id="btnmul">*</button>
+				<button class="btn btn-secondary btn2" id="btnadd" onclick="add()">+</button>
+				<button class="btn btn-secondary btn2" id="btnsub" onclick="sub()">-</button>
+				<button class="btn btn-secondary btn2" id="btnmul" onclick="mul()">*</button>
+				<button class="btn btn-secondary btn2" id="btndiv" onclick="div()">/</button>
 
-				<button class="btn btn-secondary btn2" id="btndiv">/</button>
-
-				<button class="btn btn-secondary btn1">=</button>
+				<button class="btn btn-secondary btn1" id="equal">=</button>
 
 				<button class="btn btn-secondary btn1" onclick="clear()">Clear</button>
 			</div>
