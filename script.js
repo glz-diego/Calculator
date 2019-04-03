@@ -6,43 +6,43 @@ var mul = false;
 var x = 0;
 var y = 0;
 function one(){
-	var textnode = document.createTextNode(1);
+	var textnode = document.createTextNode("1");
 	document.getElementById("output").appendChild(textnode);
 }
 function two(){
-	var textnode = document.createTextNode(2);
+	var textnode = document.createTextNode("2");
 	document.getElementById("output").appendChild(textnode);
 }
 function three(){
-	var textnode = document.createTextNode(3);
+	var textnode = document.createTextNode("3");
 	document.getElementById("output").appendChild(textnode);
 }
 function four(){
-	var textnode = document.createTextNode(4);
+	var textnode = document.createTextNode("4");
 	document.getElementById("output").appendChild(textnode);
 }
 function five(){
-	var textnode = document.createTextNode(5);
+	var textnode = document.createTextNode("5");
 	document.getElementById("output").appendChild(textnode);
 }
 function six(){
-	var textnode = document.createTextNode(6);
+	var textnode = document.createTextNode("6");
 	document.getElementById("output").appendChild(textnode);
 }
 function seven(){
-	var textnode = document.createTextNode(7);
+	var textnode = document.createTextNode("7");
 	document.getElementById("output").appendChild(textnode);
 }
 function eight(){
-	var textnode = document.createTextNode(8);
+	var textnode = document.createTextNode("8");
 	document.getElementById("output").appendChild(textnode);
 }
 function nine(){
-	var textnode = document.createTextNode(9);
+	var textnode = document.createTextNode("9");
 	document.getElementById("output").appendChild(textnode);
 }
 function zero(){
-	var textnode = document.createTextNode(0);
+	var textnode = document.createTextNode("0");
 	document.getElementById("output").appendChild(textnode);
 }
 
