@@ -1,8 +1,9 @@
 body {
-    background: #000000;
+    background-color: silver;
 }
 .container{
-    background: #000000;
+	align-items: center;
+    background-color: silver;
     margin: 0px;
 }
 .entry {
@@ -16,7 +17,7 @@ body {
 }
 .calc-container{
     width: 300px;
-    background-color: rgb(9, 114, 138);
+    background-color: rgb(0, 55, 138);
     border-radius: 20px;
     padding: 30px;
     margin-top: 10px;
