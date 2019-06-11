@@ -1,27 +1,42 @@
-#output{
-	height: 70px;
-	font-size: 45px;
+body {
+    background: #000000;
 }
 .container{
-	margin-top: 50px;
-	font-size: 35px;
+    background: #000000;
+    margin: 0px;
 }
-.btn{
-	margin: 12px;
-	height: 90px;
-	size: 35px;
+.entry {
+    width: 265px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 2px;
+    font-size: 16px;
+    font-weight: bold;
 }
-.btn2{
-	width: 90px;
+.calc-container{
+    width: 300px;
+    background-color: rgb(9, 114, 138);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-.btn1{
-	width: 318px;
+.numBut{
+    height: 59px;
+    width: 59px;
+    margin: 10px 4px;
+    border: none !important;
 }
-h1{
-	padding-top: 15px;
-	text-align: center;
+.mathBut{
+    height: 59px;
+    width: 59px;
+    margin: 10px 4px;
+    border: none !important;
 }
-.row{
-	display: flex;
-	justify-content: center;
+.equalBut{
+    height: 59px;
+    width: 126px;
+    margin: 10px 4px;
+    border: none !important;
 }

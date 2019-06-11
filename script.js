@@ -1,95 +1,89 @@
-var calculator = new Object();
-var add = false;
-var sub = false;
-var div = false;
-var mul = false;
-var x = 0;
-var y = 0;
-function one(){
-	var textnode = document.createTextNode("1");
-	document.getElementById("output").appendChild(textnode);
+let prevVal = "";
+let newVal = "";
+let resultVal = "";
+let mathOperator = "";
+let decimalClicked = false;
+let valMemStored = "";
+ 
+function numButPress(num){
+    if(resultVal){
+        newVal = num;
+        resultVal = "";
+    } else {
+        if(num === '.'){
+            if(decimalClicked != true){
+                newVal += num;
+                decimalClicked = true;
+            }
+        } else {
+            newVal += num;
+        }
+    }
+        
+    document.getElementById("entry").value = newVal;
 }
-function two(){
-	var textnode = document.createTextNode("2");
-	document.getElementById("output").appendChild(textnode);
+ 
+function mathButPress(operator){
+    if(!resultVal){
+        prevVal = newVal;
+    } else {
+ 
+        prevVal = resultVal;
+    }
+    
+    newVal = "";
+    decimalClicked = false;
+    mathOperator = operator;
+ 
+    resultVal = "";
+    document.getElementById("entry").value = "";
 }
-function three(){
-	var textnode = document.createTextNode("3");
-	document.getElementById("output").appendChild(textnode);
+ 
+function equalButPress(){
+    decimalClicked = false;
+ 
+    prevVal = parseFloat(prevVal);
+    newVal = parseFloat(newVal);
+ 
+    switch(mathOperator){
+        case "+":
+            resultVal = prevVal + newVal;
+            break;
+        case "-":
+            resultVal = prevVal - newVal;
+            break;
+        case "*":
+            resultVal = prevVal * newVal;
+            break;
+        case "/":
+            resultVal = prevVal / newVal;
+            break;
+        default:
+            resultVal = newVal;
+    }
+ 
+    prevVal = resultVal;
+ 
+    document.getElementById("entry").value = resultVal;
 }
-function four(){
-	var textnode = document.createTextNode("4");
-	document.getElementById("output").appendChild(textnode);
+ 
+function clearButPress(){
+    prevVal = "";
+    newVal = "";
+    resultVal = "";
+    mathOperator = "";
+    decimalClicked = false;
+    document.getElementById("entry").value = "0";
 }
-function five(){
-	var textnode = document.createTextNode("5");
-	document.getElementById("output").appendChild(textnode);
-}
-function six(){
-	var textnode = document.createTextNode("6");
-	document.getElementById("output").appendChild(textnode);
-}
-function seven(){
-	var textnode = document.createTextNode("7");
-	document.getElementById("output").appendChild(textnode);
-}
-function eight(){
-	var textnode = document.createTextNode("8");
-	document.getElementById("output").appendChild(textnode);
-}
-function nine(){
-	var textnode = document.createTextNode("9");
-	document.getElementById("output").appendChild(textnode);
-}
-function zero(){
-	var textnode = document.createTextNode("0");
-	document.getElementById("output").appendChild(textnode);
+ 
+function copyButPress(){
+    valMemStored = document.getElementById("entry").value;
 }
 
-
-// function x(){
-// 	var x = document.querySelector("#output").value;
-// 	if (output != "") {
-// 		let output = document.querySelector("#output");
-// 		output.innerHTML = "";
-// 	}
-// }
-// function y(){
-// 	var y = document.querySelector("#output").value;
-// 	if (output != "") {
-// 		let output = document.querySelector("#output");
-// 		output.innerHTML = "";
-// 	}
-// }
-// var calculate = function() {
-// 			console.dir(this);
-			
-// 			var x = document.querySelector(x);
-// 			var y = document.querySelector(y);
-			
-// 			var result;
-
-// 			if(this.id == "btnadd") {
-// 				result = calculator.add(x.value, y.value);
-// 				var textnode = document.createTextNode(result);
-// 				document.getElementById("output").appendChild(textnode);
-// 			}
-
-// 			else if (this.id == "btnsub") {
-// 				result = calculator.subtract(x.value, y.value); 
-// 				console.log(result);
-// 			}
-
-// 			else if (this.id == "btnmul") {
-// 				result = calculator.multiply(x.value, y.value); 
-// 				console.log(result);
-// 			}
-
-// 			else if (this.id == "btndiv") {
-// 				result = calculator.divide(x.value, y.value); 
-// 				console.log(result);
-// 			}
-
-// 			var out = document.querySelector("#output");
-// 			output.value = result;
-// }
+function pasteButPress(){
+    if(valMemStored){
+        document.getElementById("entry").value = valMemStored;
+        newVal = valMemStored;
+    }
+     
+}
